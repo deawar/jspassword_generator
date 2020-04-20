@@ -1,0 +1,2 @@
+GitHub Repository: https://github.com/deawar/jspassword_generator
+GitHub Page: https://deawar.github.io/jspassword_generator/
