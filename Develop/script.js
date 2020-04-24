@@ -6,13 +6,15 @@ var numbersOnly = /^\d+$/;
 var lowercase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 var uppercase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 var numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
-var punc = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "_", "+", "~", "`", "|", "}", "{", "[", "]", ":", ";", "?", ">", "<", ".", "/", "\"", "-", "="];
+var punc = ["!", "@", "#", "$", "%", "(", ")",  "?"];
+var spec = ["^", "&", "*", "_", "+", "~", "`", "|", "}", "{", "[", "]", ":", ";", ">", "<", ".", "/", "\"", "-", "="];
+
 // var headerEl = document.getElementsByClassName("card-header");
 var headerEl = $(".card-header");
 var button = $("<button>");
-var inputGrp = $('<div class= "input-group mb-3">   <div class="input-group-prepend"> div class="input-group-text"> <input type="checkbox" aria-label="Checkbox for following text input"></div>');
+var inputGrp = $('<div class= "input-group mb-3"><div class="input-group-prepend"> <div class="input-group-text"> <input type="checkbox" aria-label="Checkbox for following text input" id="numbersOnly"><span></span></div>');
 
-headerEl.append(inputGrp)
+//headerEl.append(inputGrp)
 
 // Write password to the #password input
 function writePassword() {
@@ -31,37 +33,63 @@ function errCheck(myfield) {  //number from userInput
     if ((numbersOnly.test(myData)) && ((myData < 129) && (myData > 7))) {
       isValid = true; //Data entered is good.
       console.log("in function; ", myData); //Verifies date in console.log
+    } else if (isValid = false) { //Means user data input is invalid!
     } else {
-      isValid = false; //Means user data input is invalid!');
-    }
-  } else {
-    alert('Please enter data!');
+      alert('Please enter data!');
     isValid = "";
   }
   return (isValid); //but this part works fine uderstood
+  }
 }
 
 function getUserInput() { //collects the userChoice{} object
   var userChoice = {};
   var userInput = prompt("How long should this password be? \nEnter a number from 8 to 128: ");
   var tested = errCheck(userInput);
+  var isCap;
+  var isLower;
+  var isNum;
+  var isPunc;
+  var isSpecial;
   while (tested !== true) { //Doesn't progress unless valid data is entered.
     console.log(tested);
     userInput = prompt(userInput + " is not a whole number from 8 to 128\nPlease enter a whole number from 8 - 128");
     tested = errCheck(userInput);
   }
+  var pwchoice = document.forms[0];
+    for (var i = 0; i<5; i++){
+      pwchoice = document.forms[i];
+      console.log("pwchoice: ", pwchoice);
+      if (pwchoice[0].checked){
+        isCaps = true;
+      }
+      if (pwchoice[1].checked){
+        isLower = true;
+      }
+      if (pwchoice[2].checked){
+        isNum = true;
+      }
+      if (pwchoice[3].checked){
+        isPunc = true;
+      }
+      if (pwchoice[4].checked){
+        isSpecial = true;
+      }
+    }   
+  
   userChoice['length'] = userInput;//Creates Object for the types of characters to be used.
-  var isCaps = confirm("Should we use UPPERCASE letters?");
+  //var isCaps = confirm("Should we use UPPERCASE letters?");
   userChoice['caps'] = isCaps;
-  var isLower = confirm("Should we use lowercase letters?");
+  //var isLower = confirm("Should we use lowercase letters?");
   userChoice['lower'] = isLower;
-  var isNum = confirm("Should we use numbers 0 - 9?");
+  //var isNum = confirm("Should we use numbers 0 - 9?");
   userChoice['num'] = isNum;
-  var isSpecial = confirm("Should we use special Characters?\n (\"\?\#!$%&\'" + "()*+-./:;<=>?@[\\]^_`{|}~)");
+  userChoice['punctuation'] = isPunc;
+  //var isSpecial = confirm("Should we use special Characters?\n (\"\?\#!$%&\'" + "()*+-./:;<=>?@[\\]^_`{|}~)");
   userChoice['special'] = isSpecial;
 
   //If user enters a length and cancels all other choices we check that here.
-  if ((userChoice.caps === false) && (userChoice.lower === false) && (userChoice.num === false) && (userChoice.special === false)) {
+  if ((userChoice.caps === false) && (userChoice.lower === false) && (userChoice.num === false) && (userChoice.punctuation === false) &&(userChoice.special === false)) {
     alert("No usable characters chosen.\nPlease choose at least one character type.\nClick Generate Password to restart.");
     return userChoice.caps = "";
   }
@@ -97,4 +125,5 @@ function generatePassword() {
 
 }
 // Add event listener to generate button
+$("#numbers").onclick
 generateBtn.addEventListener("click", writePassword);

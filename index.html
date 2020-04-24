@@ -15,14 +15,46 @@
       <div class="card">
         <div class="card-header">
           <h2>Generate a Password</h2>
+          <form>
+          <div class= "input-group mb-3">
+            <div class="input-group-prepend"> 
+              <div class="input-group-text"> 
+                <input type="checkbox" name="pwchoice" aria-label="Checkbox for following text input" id="uppercase"> Upper Case Letters "ABCD..."          
+              </div>
+            </div>
+          </div>
+          <div class= "input-group mb-3">
+            <div class="input-group-prepend"> 
+              <div class="input-group-text"> 
+                <input type="checkbox" name="pwchoice" aria-label="Checkbox for following text input" id="lowercase"> Lower Case Letters "abcd..."
+              </div>
+            </div>
+          </div>
+          <div class= "input-group mb-3">
+            <div class="input-group-prepend"> 
+              <div class="input-group-text"> 
+                <input type="checkbox" name="pwchoice" aria-label="Checkbox for following text input" id="numbers"> Numbers, i.e. "1234..."
+              </div>
+            </div>
+          </div>
+          <div class= "input-group mb-3">
+            <div class="input-group-prepend"> 
+              <div class="input-group-text"> 
+                <input type="checkbox" name="pwchoice" aria-label="Checkbox for following text input" id="punctuation"> Punctuation "!@#$%()?"
+              </div>
+            </div>
+          </div>
+          <div class= "input-group mb-3">
+            <div class="input-group-prepend"> 
+              <div class="input-group-text"> 
+                <input type="checkbox" name="pwchoice" aria-label="Checkbox for following text input" id="special"> Special Characters "^&*_+~|}{[]:;>&lt"
+              </div>
+            </div>
+          </div>
         </div>
+      </form>
         <div class="card-body">
-          <textarea
-            readonly
-            id="password"
-            placeholder="Your Secure Password"
-            aria-label="Generated Password"
-          ></textarea>
+          <textarea readonly id="password" placeholder="Your Secure Password" aria-label="Generated Password"></textarea>
         </div>
         <div class="card-footer">
           <button id="generate" class="btn">Generate Password</button>
