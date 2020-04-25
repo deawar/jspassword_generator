@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Password Generator</title>
     <link rel="stylesheet" href="./Develop/style.css" />
+    <link href="./Assets/jquery-simple-slider/css/simple-slider.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
     <div class="wrapper">
@@ -15,25 +16,59 @@
       <div class="card">
         <div class="card-header">
           <h2>Generate a Password</h2>
+          <div class="slidecontainer">
+            <label for="myRange">Choose a Password length from 8-256 characters.</label>
+            <input type="text" data-slider="true" data-slider-range="8,256" data-slider-step="1" name="myRange" value="124" class="slider" id="myRange">
+            <p>Value: <span id="slideLength"></span></p>
+          </div>
+          <form>
+          <div class= "input-group mb-3">
+            <div class="input-group-prepend"> 
+              <div class="input-group-text"> 
+                <input type="checkbox" class="pwchoice" aria-label="Checkbox for text input" id="uppercase"> Upper Case Letters "ABCD..."          
+              </div>
+            </div>
+          </div>
+          <div class= "input-group mb-3">
+            <div class="input-group-prepend"> 
+              <div class="input-group-text"> 
+                <input type="checkbox" class="pwchoice" aria-label="Checkbox for text input" id="lowercase"> Lower Case Letters "abcd..."
+              </div>
+            </div>
+          </div>
+          <div class= "input-group mb-3">
+            <div class="input-group-prepend"> 
+              <div class="input-group-text"> 
+                <input type="checkbox" class="pwchoice" aria-label="Checkbox for text input" id="numbers"> Numbers, i.e. "1234..."
+              </div>
+            </div>
+          </div>
+          <div class= "input-group mb-3">
+            <div class="input-group-prepend"> 
+              <div class="input-group-text"> 
+                <input type="checkbox" class="pwchoice" aria-label="Checkbox fo text input" id="punctuation"> Punctuation "!@#$%()?"
+              </div>
+            </div>
+          </div>
+          <div class= "input-group mb-3">
+            <div class="input-group-prepend"> 
+              <div class="input-group-text"> 
+                <input type="checkbox" class="pwchoice" aria-label="Checkbox for text input" id="special"> Special Characters "^&*_+~|}{[]:;>&lt"
+              </div>
+            </div>
+          </div>
         </div>
+      </form>
         <div class="card-body">
-          <textarea
-            readonly
-            id="password"
-            placeholder="Your Secure Password"
-            aria-label="Generated Password"
-          ></textarea>
+          <textarea readonly id="password" placeholder="Your Secure Password" aria-label="Generated Password"></textarea>
         </div>
         <div class="card-footer">
           <button id="generate" class="btn">Generate Password</button>
         </div>
       </div>
     </div>
-    <script
-			  src="https://code.jquery.com/jquery-3.4.1.slim.js"
-			  integrity="sha256-BTlTdQO9/fascB1drekrDVkaKd9PkwBymMlHOiG+qLI="
-        crossorigin="anonymous">
-    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="./Assets/jquery-simple-slider/js/simple-slider.js"></script>
     <script src="./Develop/script.js"></script>
   </body>
 </html>
