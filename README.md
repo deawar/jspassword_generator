@@ -4,6 +4,8 @@ Create an application that generates a random password based on user-selected cr
 
 If you are unfamiliar with special characters, take a look at [some examples](https://www.owasp.org/index.php/Password_special_characters).
 
+Link to the working application: [jspassword_generator](https://deawar.github.io/jspassword_generator/)
+
 ## User Story
 
 ```
@@ -37,7 +39,7 @@ THEN the password is copied to the my clipboard.
 The following image demonstrates the application functionality:
 
 ![password generator demo](./Assets/03-javascript-demo.png)
-![jspassword_generator](https://deawar.github.io/jspassword_generator/)
+
 
 
 
