@@ -105,7 +105,7 @@ var userChoice = {};
     
     //If user enters a length and cancels all other choices we check that here.
     if ((userChoice.caps === false) && (userChoice.lower === false) && (userChoice.num === false) && (userChoice.punctuation === false) &&(userChoice.special === false)) {
-      alert("No usable characters chosen.\nPlease choose at least one character type.\nClick Generate Password to restart.");
+      
       return userChoice.caps = "";
     }
     console.log("Line 105 userChoice: ",userChoice);
@@ -158,6 +158,7 @@ function generatePassword(sliderInput) {
   shuffle(possArr);
   console.log("possArr: ",possArr);
   //generates the password.
+  console.log("Line 161 userChoice.length: ",userChoice.length)
   for (var i = 0; i < userChoice.length; i++) {
     pwArr.push(possArr[Math.floor(Math.random() * possArr.length)]);
   }
@@ -166,9 +167,11 @@ function generatePassword(sliderInput) {
   return password = (pwArr.toString()).replace(/,/g, ''); //converts pwArr to string and removes commas.
 
 }
-// Add event listener to generate button
-$("#numbers").onclick
-generateBtn.addEventListener("click", writePassword);
+
+$("#generate").click(function(){
+  $("#password").select();
+  document.execCommand('copy');
+});
 
 $("#myRange").bind("slider:changed", function (event, data) {
   event.preventDefault();
