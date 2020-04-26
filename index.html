@@ -16,11 +16,9 @@
       <div class="card">
         <div class="card-header">
           <h2>Generate a Password</h2>
-          <div class="slidecontainer">
-            <label for="myRange">Choose a Password length from 8-256 characters.</label>
-            <input type="text" data-slider="true" data-slider-range="8,256" data-slider-step="1" name="myRange" value="124" class="slider" id="myRange">
-            <p>Password Length: <span id="slideLength"></span></p>
-          </div>
+        <div>
+          <p>Choose the characters you want in your password</p>
+          
           <form>
           <div class= "input-group mb-3">
             <div class="input-group-prepend"> 
@@ -59,12 +57,19 @@
           </div>
         </div>
       </form>
+      <div class="slidecontainer">
+        <p>Move the slider to choose the length.</p>
+        <label for="myRange">Choose a Password length from 8-256 characters.</label>
+        <input type="text" data-slider="true" data-slider-range="8,256" data-slider-step="1" name="myRange" value="124" class="slider" id="myRange">
+        <p>Password Length: <span id="slideLength"></span></p>
+      </div>
         <div class="card-body">
-          <textarea maxlength ="256" rows= "8" readonly id="password" placeholder="Your Secure Password" aria-label="Generated Password"></textarea>
+          <textarea maxlength ="256" rows= "6" readonly id="password" placeholder="Your Secure Password" aria-label="Generated Password"></textarea>
         </div>
         <div class="card-footer">
           <button id="generate" class="btn">Copy Password to Clipboard</button>
         </div>
+        <footer id="rights">All Rights Reserved  Dean Warren &copy; 2020 </footer>
       </div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
