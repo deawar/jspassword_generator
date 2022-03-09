@@ -1,6 +1,6 @@
-// Assignment Password Generator 
+// Assignment Password Generator Version 1.0.1
 // By Dean Warren for GT Code Camp Full Stack Dev
-// Assignment due: 3/21/20 
+// Assignment due: 3/21/20 updated 3/9/2022
 var generateBtn = document.querySelector("#generate");
 var numbersOnly = /^\d+$/;
 var lowercase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
