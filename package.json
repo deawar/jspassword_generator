@@ -1,0 +1,27 @@
+{
+  "name": "jspassword_generator",
+  "version": "1.0.2",
+  "description": "HTML based password generator.",
+  "main": "script.js",
+  "scripts": {
+    "test": "grunt"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/deawar/jspassword_generator.git"
+  },
+  "keywords": [
+    "javascript",
+    "password-generator"
+  ],
+  "author": "Dean Warren",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/deawar/jspassword_generator/issues"
+  },
+  "homepage": "https://github.com/deawar/jspassword_generator#readme",
+  "devDependencies": {
+    "grunt": "^1.5.3",
+    "grunt-contrib-uglify": "^5.2.2"
+  }
+}
