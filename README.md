@@ -39,7 +39,7 @@ THEN the password is copied to the my clipboard.
 
 The following image demonstrates the application functionality:
 
-![password generator demo](./Assets/jspassword.gif)
+![password generator demo](./Assets/jspasswordgen.gif)
 
 
 
